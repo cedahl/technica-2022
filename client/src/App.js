@@ -1,18 +1,12 @@
 import React from 'react';
-
+import NameForm from './NameForm/NameForm';
 
 const App = () => {
     return (
         <div>
             <h1>Welcome to DigiCache!</h1>
             <h4>What's your name?</h4>
-            <form>
-                <label>
-                    Name:
-                    <input type="text" name="name" />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <NameForm />
         </div>
     )
 }
