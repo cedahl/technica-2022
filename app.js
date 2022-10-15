@@ -1,53 +1,53 @@
 const Sequelize = require("sequelize-cockroachdb");
 
 // Connect to CockroachDB through Sequelize.
-const connectionString = "postgresql://casey:k7tgPfAHZHw5itMLjutivA@free-tier4.aws-us-west-2.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&options=--cluster%3Dzany-sockeye-3970"
+const connectionString = process.env.DATABASE_URL
 const sequelize = new Sequelize(connectionString, {
   dialectOptions: {
     application_name: "docs_simplecrud_node-sequelize"
   }
 });
 
-// Define the Account model for the "accounts" table.
-const Account = sequelize.define("accounts", {
+// Define the User model for the "users" table.
+const User = sequelize.define("users", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
   },
-  balance: {
-    type: Sequelize.INTEGER,
+  name: {
+    type: Sequelize.STRING,
   },
 });
 
-// Create the "accounts" table.
-Account.sync({
-  force: true,
-})
-  .then(function () {
-    // Insert two rows into the "accounts" table.
-    return Account.bulkCreate([
-      {
-        id: 1,
-        balance: 1000,
-      },
-      {
-        id: 2,
-        balance: 250,
-      },
-    ]);
+// Create the "users" table.
+  User.sync({
+    force: true,
   })
-  .then(function () {
-    // Retrieve accounts.
-    return Account.findAll();
-  })
-  .then(function (accounts) {
-    // Print out the balances.
-    accounts.forEach(function (account) {
-      console.log(account.id + " " + account.balance);
+    .then(function () {
+      // Insert two rows into the "users" table.
+      return User.bulkCreate([
+        {
+          id: 1,
+          name: "John Smith",
+        },
+        {
+          id: 2,
+          name: "Other User",
+        },
+      ]);
+    })
+    .then(function () {
+      // Retrieve accounts.
+      return User.findAll();
+    })
+    .then(function (users) {
+      // Print out the balances.
+      users.forEach(function (users) {
+        console.log(users.id + " " + users.name);
+      });
+      process.exit(0);
+    })
+    .catch(function (err) {
+      console.error("error: " + err.message);
+      process.exit(1);
     });
-    process.exit(0);
-  })
-  .catch(function (err) {
-    console.error("error: " + err.message);
-    process.exit(1);
-  });
