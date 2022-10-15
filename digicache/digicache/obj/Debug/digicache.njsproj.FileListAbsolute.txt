@@ -1,0 +1,3 @@
+C:\Users\casey\Documents\GitHub\technica-2022\digicache\digicache\obj\Debug\digicache.njsproj.AssemblyReference.cache
+C:\Users\casey\Documents\GitHub\technica-2022\digicache\digicache\obj\Debug\digicache.njsproj.CoreCompileInputs.cache
+C:\Users\casey\Documents\GitHub\technica-2022\digicache\digicache\bin\Microsoft.NodejsTools.WebRole.dll
