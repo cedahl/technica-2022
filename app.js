@@ -27,7 +27,13 @@ const Cache = sequelize.define("caches", {
     autoIncrement: true,
     primaryKey: true,
   },
-  location: {
+  longitude: {
+    type: Sequelize.DOUBLE,
+  },
+  latitude: {
+    type: Sequelize.DOUBLE,
+  },
+  name: {
     type: Sequelize.STRING,
   },
   message: {
@@ -78,16 +84,16 @@ const Cache = sequelize.define("caches", {
         force: true,
       })
         .then(function () {
-          // Insert four rows into the "caches" table.
+          // Insert two rows into the "caches" table.
           return Cache.bulkCreate([
-            {location: "Times Square, New York",
+            {longitude: 40.7577,
+             latitude: -73.9857,
+             name: "Times Square, New York",
              message: "The place to be on New Years'!"},
-            {location: "Huntington Library, Los Angeles",
+            {longitude: 34.128716,
+             latitude: -118.11439,
+             name: "Huntington Library, Los Angeles",
              message: "Beautiful place... took a family trip here and it was absolutely wonderful."},
-            {location: "",
-             message: ""},
-            {location: "",
-             message: ""},
           ]);
         })
         .then(function () {
@@ -97,7 +103,7 @@ const Cache = sequelize.define("caches", {
         .then(function (caches) {
           // Print out the ids, locations, and messages.
           caches.forEach(function (caches) {
-            console.log(caches.id + " " + caches.location + " " + caches.message);
+            console.log(caches.id + " " + caches.longitude + " " + caches.latitude + " " + caches.name + " " + caches.message);
           });
           process.exit(0);
         })
