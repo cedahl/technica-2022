@@ -1,11 +1,12 @@
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  server: {
-    hmr:
-      process.env.CODESANDBOX_SSE || process.env.GITPOD_WORKSPACE_ID
-        ? 443
-        : undefined,
-  },
-});
+export default ({ mode }) => {
+    return defineConfig({
+        plugins: [react()],
+        define: {
+            "process.env.NODE_ENV": `"${mode}"`,
+        }
+    })
+}
