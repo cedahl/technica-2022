@@ -1,0 +1,9 @@
+{
+  "name": "digicache",
+  "version": "0.0.0",
+  "description": "digicache",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  }
+}
