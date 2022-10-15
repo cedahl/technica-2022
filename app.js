@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize-cockroachdb");
 
 // Connect to CockroachDB through Sequelize.
-const connectionString = "postgresql://casey:k7tgPfAHZHw5itMLjutivA@free-tier4.aws-us-west-2.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&options=--cluster%3Dzany-sockeye-3970"
+const connectionString = process.env.DATABASE_URL
 const sequelize = new Sequelize(connectionString, {
   dialectOptions: {
     application_name: "docs_simplecrud_node-sequelize"
