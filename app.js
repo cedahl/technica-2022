@@ -12,6 +12,7 @@ const sequelize = new Sequelize(connectionString, {
 const User = sequelize.define("users", {
   id: {
     type: Sequelize.INTEGER,
+    autoIncrement: true,
     primaryKey: true,
   },
   name: {
@@ -24,16 +25,20 @@ const User = sequelize.define("users", {
     force: true,
   })
     .then(function () {
-      // Insert two rows into the "users" table.
+      // Insert twelve rows into the "users" table.
       return User.bulkCreate([
-        {
-          id: 1,
-          name: "John Smith",
-        },
-        {
-          id: 2,
-          name: "Other User",
-        },
+        {name: "John Smith"},
+        {name: "Other User"},
+        {name: "Bobinette Bails"},
+        {name: "Killy Paslow"},
+        {name: "Rici Sussams"},
+        {name: "Gilburt Hewlings"},
+        {name: "Hailee Tunnock"},
+        {name: "Judith Hinchcliffe"},
+        {name: "Marybeth Dubery"},
+        {name: "Theodoric Varne"},
+        {name: "Reginald Instone"},
+        {name: "Collete Lynskey"},
       ]);
     })
     .then(function () {
