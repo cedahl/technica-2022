@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from "react";
 import NameForm from './NameForm/NameForm';
-import {Map, GoogleApiWrapper} from 'google-maps-react'
+import {Map, GoogleApiWrapper, Marker} from 'google-maps-react'
 class MapContainer extends Component {
     render() {
         return (
@@ -11,12 +11,19 @@ class MapContainer extends Component {
                 <NameForm />
                 <Map 
                 google = {this.props.google}
-                style = {{width: "45%", height: "70%"}}
-                zoom = {13}
+                zoom = {16}
                 initialCenter = {{
                     lat: 35.661777,
                     lng: 139.704056
+                }}
+                style = {{width: "45%", height: "70%"}}
+                >
+
+                <Marker position = {{
+                    lat: 35.661777,
+                    lng: 139.704056
                 }}/>
+                </Map>
             </div>
         );
     }
