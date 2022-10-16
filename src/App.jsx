@@ -62,8 +62,7 @@ const App = () => {
                 </div>
         </div>
 
-
-            <Map />
+        <Map />
 
         </div>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 
 const CreateCache = () => {
     return (
-        <div>
+        <div class="small-box">
             <h1 class="text-3xl pt-2">Drop a cache</h1>
             <p>Leave your message & photo</p>
             <form>
@@ -12,7 +12,6 @@ const CreateCache = () => {
                     </label>
                     <input class="text-xl bg-blue-800 text-gray-100 py-2 px-4 rounded-md transition ease-in-out delay-325 hover:bg-blue-400" type="submit" value="Leave your mark"/>
                 </div>
-
         </form>
         </div>
     );

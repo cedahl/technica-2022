@@ -10,7 +10,7 @@ const center = {
 class MapContainer extends Component {
     render() {
         return (
-            <div class = "self-center ">
+            <div class = "self-center mt-11">
                 <Map 
                 google = {this.props.google}
                 zoom = {16}
