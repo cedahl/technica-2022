@@ -22,41 +22,41 @@ const App = () => {
 
         <div class = "flex justify-center">
 
-        <div class="m-6">
-                <div class = "text-center">
-                    <button class = "bg-blue-800 text-gray-100 min-w-min bg-gray-200 py-2 px-3" onClick = {togglePopup}>
-                        Create Cache
-                    </button>
-                </div>
-                
-                {isOpen && <Popup 
-                    handleClose = {togglePopup}
-                    content = {
-                        <div> 
-                            <h2>Create a cache here!</h2>
-                            <p>Popup Cache</p>
-                        </div>
-                    }
-                />}
-            </div>
-
             <div class="m-6">
-                <div class = "text-center">
-                    <button class = "bg-blue-800 text-gray-100 min-w-min bg-gray-200 py-2 px-3" onClick = {togglePopup}>
-                        Find New Cache
-                    </button>
+                    <div class = "text-center">
+                        <button class = "bg-blue-800 text-gray-100 min-w-min py-2 px-3" onClick = {togglePopup}>
+                            Create Cache
+                        </button>
+                    </div>
+                    
+                    {isOpen && <Popup 
+                        handleClose = {togglePopup}
+                        content = {
+                            <div> 
+                                <h2>Create a cache here!</h2>
+                                <p>Popup Cache</p>
+                            </div>
+                        }
+                    />}
                 </div>
-                
-                {isOpen && <Popup 
-                    handleClose = {togglePopup}
-                    content = {
-                        <div> 
-                            <h2>Find new Cache?!</h2>
-                            <p>Sure, why not?</p>
-                        </div>
-                    }
-                />}
-            </div>
+
+                <div class="m-6">
+                    <div class = "text-center">
+                        <button class = "bg-blue-800 text-gray-100 min-w-min py-2 px-3" onClick = {togglePopup}>
+                            Find New Cache
+                        </button>
+                    </div>
+                    
+                    {isOpen && <Popup 
+                        handleClose = {togglePopup}
+                        content = {
+                            <div> 
+                                <h2>Find new Cache?!</h2>
+                                <p>Sure, why not?</p>
+                            </div>
+                        }
+                    />}
+                </div>
         </div>
 
 
