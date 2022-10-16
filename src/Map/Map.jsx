@@ -28,7 +28,8 @@ class MapContainer extends Component {
             };
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
-                center: myLatLng
+                center: myLatLng,
+                style: { width: "80%", height: "70%" }
             });
             var marker = new google.maps.Marker({
                 position: myLatLng,
@@ -55,6 +56,18 @@ class MapContainer extends Component {
             </div>
         );
     }
+}
+
+// Get current coordinates of user
+function getCoords() {
+    return navigator.geolocation.getCurrentPosition(
+        function (position) {
+            initMap(position.coords.latitude, position.coords.longitude)
+        },
+        function errorCallback(error) {
+            console.log(error)
+        }
+    );
 }
 
 export default GoogleApiWrapper({
