@@ -9,6 +9,34 @@ const center = {
 
 class MapContainer extends Component {
     render() {
+
+        // Get current coordinates of user
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                initMap(position.coords.latitude, position.coords.longitude)
+            },
+            function errorCallback(error) {
+                console.log(error)
+            }
+        );
+
+        // Initialize map to center on user's coordinates
+        function initMap(lat, lng) {
+            var myLatLng = {
+                lat,
+                lng
+            };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: myLatLng
+            });
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+            });
+        }
+
+        // Return initialized map as markup
         return (
             <div>
                 <Map 
@@ -17,7 +45,7 @@ class MapContainer extends Component {
                 initialCenter = {
                     center
                 }
-                style = {{width: "45%", height: "70%"}}
+                style = {{width: "80%", height: "70%"}}
                 >
 
                 <Marker position = {
