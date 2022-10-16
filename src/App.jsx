@@ -29,7 +29,7 @@ const App = () => {
 
             <div class="m-6">
                     <div class = "text-center">
-                        <button class = "bg-blue-800 text-gray-100 min-w-min p-3" onClick = {togglePopup}>
+                        <button class = "bg-blue-800 text-gray-100 min-w-min p-3 rounded-md transition ease-in-out delay-325 hover:bg-blue-400" onClick = {togglePopup}>
                             Create Cache
                         </button>
                     </div>
@@ -49,7 +49,7 @@ const App = () => {
 
                 <div class="m-6">
                     <div class = "text-center">
-                        <button class = "bg-blue-800 text-gray-100 min-w-min p-3" onClick = {toggleFindNew}>
+                        <button class = "bg-blue-800 text-gray-100 min-w-min p-3 rounded-md transition ease-in-out delay-325 hover:bg-blue-400" onClick = {toggleFindNew}>
                             Find New Cache
                         </button>
                     </div>

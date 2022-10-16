@@ -8,7 +8,7 @@ const NameForm = () => {
                 <label >
                     <input type="text" name="name" class = "p-3 m-5"/>
                 </label>
-                <input class="text-3xl bg-blue-800 text-gray-q00 p-3 rounded-md" type="submit" value="Submit"/>
+                <input class="text-3xl bg-blue-800 text-gray-q00 p-3 rounded-md transition ease-in-out delay-325 hover:bg-blue-400" type="submit" value="Submit"/>
             </div>
 
         </form>
