@@ -11,22 +11,19 @@ const App = () => {
     }
 
     return (
-        <div>
-            <div class="shadow-md m-3 p-3 rounded-md">
-                <h1 class="text-4xl text-center text-gray-700">Welcome to DigiCache!</h1>
+        <div class = "text-center bg-yellow-300 p-3">
+            <div class="text-center bg-white shadow-md mx-10 px-14 py-3 rounded-md">
+                <h1 class="text-3xl text-gray-700">Welcome to DigiCache!</h1>
             </div>
 
-            <div class="m-2 p-5">
-                <h4 class="text-3xl text-center">What's your name?</h4>
-            </div>
+            <p class="mt-5 text-xl">What's your name?</p>
 
             <NameForm />
 
-
-            <div>
-                <div class = "px-96 text-center">
-                    <button class = "min-w-min bg-gray-200 p-1" onClick = {togglePopup}>
-                        Create Cache!
+            <div class="m-6">
+                <div class = "text-center">
+                    <button class = "bg-blue-800 text-gray-100 min-w-min bg-gray-200 py-2 px-3" onClick = {togglePopup}>
+                        Create Cache
                     </button>
                 </div>
                 
@@ -41,7 +38,29 @@ const App = () => {
                 />}
             </div>
 
-            <Map />
+            <div class="m-6">
+                <div class = "text-center">
+                    <button class = "bg-blue-800 text-gray-100 min-w-min bg-gray-200 py-2 px-3" onClick = {togglePopup}>
+                        Find New Cache
+                    </button>
+                </div>
+                
+                {isOpen && <Popup 
+                    handleClose = {togglePopup}
+                    content = {
+                        <div> 
+                            <h2>Find new Cache?!</h2>
+                            <p>Sure, why not?</p>
+                        </div>
+                    }
+                />}
+            </div>
+
+            <div>
+                <Map />
+            </div>
+
+            
         </div>
     );
 }

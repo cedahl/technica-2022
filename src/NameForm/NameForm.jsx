@@ -3,11 +3,14 @@ import '../index.css';
 
 const NameForm = () => {
     return (
-        <form>
-            <label class="border-solid border-b-8 text-3xl  border-gray-700">
-                <input type="text" name="name" class = "w-1/3 p-3 m-5"/>
-            </label>
-            <input class="text-3xl" type="submit" value="Submit!"  />
+        <form class = "flex ">
+            <div class="flex-auto text-3xl">
+                <label >
+                    <input type="text" name="name" class = "p-3 m-5"/>
+                </label>
+                <input class="text-3xl bg-blue-800 text-gray-100 p-3" type="submit" value="Submit"/>
+            </div>
+
         </form>
     )
 }
