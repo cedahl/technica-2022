@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from "react";
 import {Map, GoogleApiWrapper, Marker} from 'google-maps-react'
-
+import '../index.css';
 const center = {
     lat: 35.661777,
     lng: 139.704056
@@ -10,15 +10,15 @@ const center = {
 class MapContainer extends Component {
     render() {
         return (
-            <div>
+            <div class = "self-center ">
                 <Map 
                 google = {this.props.google}
                 zoom = {16}
                 initialCenter = {
                     center
                 }
-                style = {{width: "45%", height: "70%"}}
-                >
+                style = {{width: "75%", height: "60%", left: '11%',
+            }}>
 
                 <Marker position = {
                     center
