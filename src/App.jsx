@@ -3,6 +3,8 @@ import Popup from './Popup/Popup'
 import NameForm from './NameForm/NameForm';
 import Map from './Map/Map';
 import './index.css';
+import FindCache from './FindCache/FindCache';
+import CreateCache from './CreateCache/CreateCache';
 
 const App = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -37,10 +39,7 @@ const App = () => {
                     {isOpen && <Popup 
                         handleClose = {togglePopup}
                         content = {
-                            <div> 
-                                <h2>Create a cache here!</h2>
-                                <p>Insert Message & Photo</p>
-                            </div>
+                            <CreateCache />
                         }
                     />}
                 </div>
@@ -57,10 +56,7 @@ const App = () => {
                     {findNew && <Popup 
                         handleClose = {toggleFindNew}
                         content = {
-                            <div> 
-                                <h2>Find new Cache:</h2>
-                                <p>What are you looking for?</p>
-                            </div>
+                            <FindCache />
                         }
                     />}
                 </div>
