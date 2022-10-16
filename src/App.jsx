@@ -17,19 +17,19 @@ const App = () => {
 
     return (
         <div class = "text-center bg-yellow-300 p-3">
-            <div class="text-center bg-white shadow-md mx-10 px-14 py-3 rounded-md">
+            <div class="text-center bg-white shadow-md mx-16 px-14 py-3 rounded-md">
                 <h1 class="text-3xl text-gray-700">Welcome to DigiCache!</h1>
             </div>
 
-            <p class="mt-5 text-xl">What's your name?</p>
+            <p class="mt-5 text-xl">Please enter your name</p>
 
             <NameForm />
 
-        <div class = "flex justify-center">
+        <div class = "bg-gray-100 shadow-md mx-16 mb-3.5 rounded-lg flex justify-center">
 
             <div class="m-6">
                     <div class = "text-center">
-                        <button class = "bg-blue-800 text-gray-100 min-w-min py-2 px-3" onClick = {togglePopup}>
+                        <button class = "bg-blue-800 text-gray-100 min-w-min p-3" onClick = {togglePopup}>
                             Create Cache
                         </button>
                     </div>
@@ -49,7 +49,7 @@ const App = () => {
 
                 <div class="m-6">
                     <div class = "text-center">
-                        <button class = "bg-blue-800 text-gray-100 min-w-min py-2 px-3" onClick = {toggleFindNew}>
+                        <button class = "bg-blue-800 text-gray-100 min-w-min p-3" onClick = {toggleFindNew}>
                             Find New Cache
                         </button>
                     </div>
