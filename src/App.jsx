@@ -10,6 +10,11 @@ const App = () => {
         setIsOpen(!isOpen);
     }
 
+    const [findNew, setFindNew] = useState(false);
+    const toggleFindNew = () => {
+        setFindNew(!findNew);
+    }
+
     return (
         <div class = "text-center bg-yellow-300 p-3">
             <div class="text-center bg-white shadow-md mx-10 px-14 py-3 rounded-md">
@@ -34,25 +39,27 @@ const App = () => {
                         content = {
                             <div> 
                                 <h2>Create a cache here!</h2>
-                                <p>Popup Cache</p>
+                                <p>Insert Message & Photo</p>
                             </div>
                         }
                     />}
                 </div>
 
+
+
                 <div class="m-6">
                     <div class = "text-center">
-                        <button class = "bg-blue-800 text-gray-100 min-w-min py-2 px-3" onClick = {togglePopup}>
+                        <button class = "bg-blue-800 text-gray-100 min-w-min py-2 px-3" onClick = {toggleFindNew}>
                             Find New Cache
                         </button>
                     </div>
                     
-                    {isOpen && <Popup 
-                        handleClose = {togglePopup}
+                    {findNew && <Popup 
+                        handleClose = {toggleFindNew}
                         content = {
                             <div> 
-                                <h2>Find new Cache?!</h2>
-                                <p>Sure, why not?</p>
+                                <h2>Find new Cache:</h2>
+                                <p>What are you looking for?</p>
                             </div>
                         }
                     />}
