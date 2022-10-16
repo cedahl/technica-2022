@@ -3,6 +3,7 @@ import Popup from './Popup/Popup'
 import NameForm from './NameForm/NameForm';
 import Map from './Map/Map';
 import './index.css';
+import Data from "./Data";
 
 const App = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,12 @@ const App = () => {
 
     return (
         <div class = "text-center bg-yellow-300 p-3">
+            <div className="App">
+              <header className="App-header">
+                <Data />
+              </header>
+            </div>
+
             <div class="text-center bg-white shadow-md mx-16 px-14 py-3 rounded-md">
                 <h1 class="text-3xl text-gray-700">Welcome to DigiCache!</h1>
             </div>
@@ -33,11 +40,11 @@ const App = () => {
                             Create Cache
                         </button>
                     </div>
-                    
-                    {isOpen && <Popup 
+
+                    {isOpen && <Popup
                         handleClose = {togglePopup}
                         content = {
-                            <div> 
+                            <div>
                                 <h2>Create a cache here!</h2>
                                 <p>Insert Message & Photo</p>
                             </div>
@@ -53,11 +60,11 @@ const App = () => {
                             Find New Cache
                         </button>
                     </div>
-                    
-                    {findNew && <Popup 
+
+                    {findNew && <Popup
                         handleClose = {toggleFindNew}
                         content = {
-                            <div> 
+                            <div>
                                 <h2>Find new Cache:</h2>
                                 <p>What are you looking for?</p>
                             </div>

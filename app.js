@@ -1,4 +1,19 @@
 const Sequelize = require("sequelize-cockroachdb");
+const express = require("express");
+
+const app = express();
+
+app.get("/", function(req, res) {
+  res.send();
+})
+
+let port = process.env.PORT;
+if(port == null || port == "") {
+  port = 5000;
+}
+app.listen(port, function() {
+  console.log('Server started successfully');
+});
 
 // Connect to CockroachDB through Sequelize.
 const connectionString = process.env.DATABASE_URL
