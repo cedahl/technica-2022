@@ -1,4 +1,21 @@
 const Sequelize = require("sequelize-cockroachdb");
+import React from 'react';
+const express = require("express");
+
+const dataapp = express();
+
+dataapp.get("/", function(req, res) {
+  res.send("hi");
+});
+
+let port = process.env.PORT;
+if(port == null || port == "") {
+  port = 5000;
+}
+app.listen(port, function() {
+  console.log("Server started successfully");
+});
+
 
 // Connect to CockroachDB through Sequelize.
 const connectionString = process.env.DATABASE_URL
@@ -111,3 +128,15 @@ const Cache = sequelize.define("caches", {
           console.error("error: " + err.message);
           process.exit(1);
         });
+
+
+
+function DataApp() {
+  return (
+    <div className="DataApp">
+      <p>Hiiii this is a test</p>
+    </div>
+  );
+}
+
+export default DataApp;
