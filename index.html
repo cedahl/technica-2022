@@ -28,23 +28,25 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script type="module" src="./index.ts"></script>
+    <!-- <script type="module" src="./src/index.js"></script> -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/index.jsx"></script>
+    <!-- 
     <div id="map"></div>
 
-    <!--
+    
      The `defer` attribute causes the callback to execute after the full HTML
      document has been parsed. For non-blocking uses, avoiding race conditions,
      and consistent behavior across browsers, consider loading using Promises
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-    -->
+    
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJPfpV23q6wx4ts0GpCqhXCU_fK8e8Tug&callback=initMap&v=weekly"
       defer
     ></script>
+  -->
   </body>
 </html>
