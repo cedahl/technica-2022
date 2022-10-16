@@ -20,9 +20,9 @@ const App = () => {
 
             <NameForm />
 
-            <Map />
+        <div class = "flex justify-center">
 
-            <div class="m-6">
+        <div class="m-6">
                 <div class = "text-center">
                     <button class = "bg-blue-800 text-gray-100 min-w-min bg-gray-200 py-2 px-3" onClick = {togglePopup}>
                         Create Cache
@@ -57,6 +57,11 @@ const App = () => {
                     }
                 />}
             </div>
+        </div>
+
+
+            <Map />
+
         </div>
     );
 }
